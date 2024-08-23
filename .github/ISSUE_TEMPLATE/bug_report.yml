@@ -1,0 +1,61 @@
+name: 🐞 Bug report
+description: Report an issue
+body:
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Describe the bug
+      description: A clear and concise description of what the bug is.
+      placeholder: Bug description
+    validations:
+      required: true
+  - type: input
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: A minimal reproduction is **required**, otherwise the issue might be closed without further notice.
+      placeholder: Link to reproduction repository, stackblitz, etc…
+    validations:
+      required: true
+  - type: textarea
+    id: system-info
+    attributes:
+      label: System Info
+      description: OS version, package manager version, browser, compiler, relevant tools…
+      render: Shell
+      placeholder: …
+    validations:
+      required: true
+  - type: dropdown
+    id: package-manager
+    attributes:
+      label: Package Manager
+      description: Select your package manager
+      options:
+        - npm
+        - yarn
+        - pnpm
+        - bun
+        - deno
+        - n/a
+    validations:
+      required: true
+  - type: checkboxes
+    id: checkboxes
+    attributes:
+      label: Checks
+      description: A few final checks
+      options:
+        - label: Abide by [Code of Conduct](https://github.com/jcayzac/.github/blob/main/CODE_OF_CONDUCT.md)
+          required: true
+        - label: Check that there isn't already an issue that reports the same bug to avoid creating a duplicate.
+          required: true
+        - label: The provided reproduction is a [minimal reproducible](https://stackoverflow.com/help/minimal-reproducible-example) of the bug.
+          required: true
+  - type: checkboxes
+    id: contributions
+    attributes:
+      label: Contributions
+      description: Open Source projects are a community effort.
+      options:
+        - label: I am willing to submit a PR to fix this issue.
